@@ -9,6 +9,6 @@
 <a href="/books/add" style="color: steelblue">Add book</a>
 <br>
 <a href="/authors" style="color: steelblue">Show all authors</a>
-<a href="/authors/add" style="color: steelblue">Add authors</a>
+<a href="/authors/add" style="color: steelblue">Add author</a>
 </body>
 </html>
