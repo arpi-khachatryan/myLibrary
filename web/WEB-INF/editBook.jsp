@@ -30,10 +30,11 @@
         %>
         <option selected value="<%=author.getId()%>"><%=author.getName()%><%=author.getSurname()%>
         </option>
-        <%
-                }
-            }
-        %>
+        <%} else { %>
+        <option value="<%=author.getId()%>"><%=author.getName()%><%=author.getSurname()%>
+        </option>
+        <% }
+        }%>
     </select><br>
     <input type="submit" value="UPDATE">
 </form>
