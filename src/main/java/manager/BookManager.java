@@ -86,7 +86,6 @@ public class BookManager {
 
     public void editBook(Book book) {
         String sql = "update book set title=?,description=?,price=?,author_id=? where id=?";
-
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, book.getTitle());
