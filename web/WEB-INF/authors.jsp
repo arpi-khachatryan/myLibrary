@@ -10,6 +10,7 @@
 <%List<Author> authors = (List<Author>) request.getAttribute("authors");%>
 <table border="1">
     <tr>
+        <th>IMAGE</th>
         <th>ID</th>
         <th>NAME</th>
         <th>SURNAME</th>
@@ -19,6 +20,13 @@
     </tr>
     <% for (Author author : authors) {%>
     <tr>
+        <td>
+            <%if (author.getProfilePic() == null || author.getProfilePic().length() == 0) {%>
+            <img src="/image/Unknown1.png" width="100">
+            <%} else {%>
+            <img src="/getImage?profilePic=<%=author.getProfilePic()%>" width="100">
+            <%}%>
+        </td>
         <td><%=author.getId()%>
         </td>
         <td><%=author.getName()%>
