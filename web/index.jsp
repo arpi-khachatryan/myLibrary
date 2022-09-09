@@ -8,7 +8,6 @@
     User user = (User) session.getAttribute("user");
 %>
 <body>
-
 <div>
     <div>
         <div>
@@ -31,6 +30,5 @@
         <%}%>
     </div>
 </div>
-
 </body>
 </html>
