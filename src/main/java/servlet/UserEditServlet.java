@@ -27,12 +27,13 @@ public class UserEditServlet extends HttpServlet {
         String name = req.getParameter("name");
         String surname = req.getParameter("surname");
         String email = req.getParameter("email");
-
+        String password = req.getParameter("password");
         int userId = Integer.parseInt(req.getParameter("id"));
         User user = User.builder()
                 .name(name)
                 .surname(surname)
                 .email(email)
+                .password(password)
                 .id(userId)
                 .build();
         userManager.edit(user);
