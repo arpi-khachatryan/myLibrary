@@ -14,13 +14,14 @@ public class BookManager {
     private AuthorManager authorManager = new AuthorManager();
 
     public void addBook(Book book) {
-        String sql = "insert into book(title,description,price,author_id)values(?,?,?,?)";
+        String sql = "insert into book(title,description,price,author_id,profile_pic)values(?,?,?,?,?)";
         try {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, book.getTitle());
             ps.setString(2, book.getDescription().name());
             ps.setDouble(3, book.getPrice());
             ps.setInt(4, book.getAuthor().getId());
+            ps.setString(5, book.getProfilePic());
             ps.executeUpdate();
             ResultSet resultSet = ps.getGeneratedKeys();
             if (resultSet.next()) {
@@ -70,6 +71,7 @@ public class BookManager {
                 .description(Description.valueOf(resultSet.getString("description")))
                 .price(resultSet.getDouble("price"))
                 .author(author)
+                .profilePic(resultSet.getString("profile_pic"))
                 .build();
     }
 
@@ -85,13 +87,14 @@ public class BookManager {
     }
 
     public void editBook(Book book) {
-        String sql = "update book set title=?,description=?,price=?,author_id=? where id=?";
+        String sql = "update book set title=?,description=?,price=?,author_id=?,profile_pic=? where id=?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, book.getTitle());
             ps.setString(2, book.getDescription().name());
             ps.setDouble(3, book.getPrice());
             ps.setInt(4, book.getAuthor().getId());
+            ps.setString(5, book.getProfilePic());
             ps.setInt(5, book.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
