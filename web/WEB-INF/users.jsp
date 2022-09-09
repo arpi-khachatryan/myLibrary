@@ -10,12 +10,12 @@
 <% List<User> users = (List<User>) request.getAttribute("users");%>
 <table border="1">
     <tr>
-        <th>image</th>
-        <th>id</th>
-        <th>name</th>
-        <th>surname</th>
-        <th>email</th>
-        <th>action</th>
+        <th>IMAGE</th>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SURNAME</th>
+        <th>EMAIL</th>
+        <th>ACTION</th>
     </tr>
     <% for (User user : users) { %>
     <tr>
