@@ -15,4 +15,5 @@ public class Book {
     private Description description;
     private double price;
     private Author author;
+    private String profilePic;
 }
