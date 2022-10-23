@@ -41,6 +41,7 @@ public class AddBookServlet extends HttpServlet {
         double price = Double.parseDouble(req.getParameter("price"));
         int authorId = Integer.parseInt(req.getParameter("author_id"));
         Author author = authorManager.getAuthorById(authorId);
+
         Part profilePicPart = req.getPart("profilePic");
         String fileName = null;
         if (profilePicPart != null) {
